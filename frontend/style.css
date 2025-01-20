@@ -1,0 +1,40 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    font-family: Oswald, sans-serif;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.canvas {
+    display: flex;
+    width: 400px;
+    height: 400px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 25px;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.neural-network {
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 400px;
+    aspect-ratio: 1;
+}
