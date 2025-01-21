@@ -31,7 +31,6 @@ body {
     width: 100%;
     justify-content: flex-start;
     gap: 40px;
-    margin-top: 64px;
 }
 
 .canvas-container {
@@ -39,6 +38,7 @@ body {
     width: 50%;
     justify-content: space-evenly;
     gap: 40px;
+    margin-top: 64px;
 }
 
 .options {
@@ -85,14 +85,40 @@ button:active {
     flex-shrink: 0;
     box-sizing: border-box;
 }
+
 .box:hover {
     transform: scale(1.5);
     transition: transform .2s ease-in-out;
 }
 
 .neural-network {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    padding: 16px;
+}
+
+#network-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.hidden-layer {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hidden-layer .node {
+    width: 25px;
     box-sizing: border-box;
-    border: 1px solid black;
-    width: 400px;
+    border: 2px solid #2E0014;
+    border-radius: 3px;
     aspect-ratio: 1;
+    background-color: #bde0fe;
 }

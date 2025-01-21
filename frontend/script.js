@@ -35,7 +35,7 @@ canvas.addEventListener('mouseup', () => {
 });
 
 // Reset the canvas
-resetCanvas.addEventListener('click', (e) => {
+resetCanvas.addEventListener('click', () => {
     Array.from(boxes).forEach((box) => {
         box.style.backgroundColor = 'white';
     })
