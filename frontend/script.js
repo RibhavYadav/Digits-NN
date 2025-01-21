@@ -1,12 +1,15 @@
 const canvas = document.querySelector('.canvas');
 const resetCanvas = document.getElementById('reset');
 const boxes = document.getElementsByClassName('box');
-let gridSize = 16;
+console.log(canvas);
+let gridSize = 20;
 let isDrawing = false;
 
 // Create canvas
 for (let i = 0; i < gridSize ** 2; i++) {
     const div = document.createElement('div');
+    div.style.backgroundColor = 'white';
+    div.style.width = `${canvas.clientWidth / gridSize}px`;
     div.classList.add('box')
     canvas.appendChild(div);
 }
@@ -14,7 +17,7 @@ for (let i = 0; i < gridSize ** 2; i++) {
 // Function to color the box
 function color(e) {
     if (isDrawing && e.target.classList.contains('box')) {
-        e.target.style.backgroundColor = 'black';
+        e.target.style.backgroundColor = `#EE7674`;
     }
 }
 

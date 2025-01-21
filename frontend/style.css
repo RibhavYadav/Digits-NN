@@ -1,6 +1,8 @@
 html, body {
     height: 100%;
     margin: 0;
+    background-color: #EDE9EC;
+    color: #ffa600;
 }
 
 body {
@@ -11,19 +13,31 @@ body {
 }
 
 .header {
-    padding: 16px 16px 32px;
+    min-height: 48px;
+    width: 400px;
+    margin: 16px 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 2px solid #2E0014;
+    background-color: #bde0fe;
+    font-weight: bold;
+    font-size: 24px;
 }
-
 
 .container {
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-top: 64px;
 }
 
 .canvas-container {
     display: flex;
-    justify-content: space-between;
+    width: 50%;
+    justify-content: space-evenly;
     gap: 40px;
 }
 
@@ -36,19 +50,33 @@ body {
 }
 
 button {
-    width: 100px;
+    width: 120px;
     height: 40px;
     box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    border: 2px solid #2E0014;
+    border-radius: 12px;
+    background-color: #bde0fe;
+    font-weight: 500;
+    font-size: 15px;
+    transition: transform ease 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
 }
 
 .canvas {
     display: flex;
     width: 400px;
     height: 400px;
-    border: 1px solid black;
+    border: 3px solid #2E0014;
     flex-wrap: wrap;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .box {
@@ -56,6 +84,10 @@ button {
     aspect-ratio: 1;
     flex-shrink: 0;
     box-sizing: border-box;
+}
+.box:hover {
+    transform: scale(1.5);
+    transition: transform .2s ease-in-out;
 }
 
 .neural-network {
