@@ -40,3 +40,51 @@ resetCanvas.addEventListener('click', () => {
         box.style.backgroundColor = 'white';
     })
 })
+
+// Drawing network lines
+const networkLines = document.getElementById('network-lines')
+const neuralNetwork = document.querySelector('.neural-network')
+const ctx = networkLines.getContext('2d');
+
+networkLines.width = neuralNetwork.offsetWidth;
+networkLines.height = neuralNetwork.offsetHeight;
+
+function drawConnections() {
+    const layers = document.querySelectorAll('.hidden-layer');
+    const container = neuralNetwork.getBoundingClientRect();
+    for (let i = 0; i < layers.length - 1; i++) {
+        // Get two adjacent layers and their nodes
+        const currLayer = layers[i];
+        const nextLayer = layers[i + 1];
+        const currNodes = currLayer.querySelectorAll('.node');
+        const nextNodes = nextLayer.querySelectorAll('.node');
+
+        // Nested for loop for each node
+        currNodes.forEach((currNode) => {
+            // Center of the current node
+            const currRect = currNode.getBoundingClientRect();
+            const currX = currRect.left + currRect.width / 2 - container.left;
+            const currY = currRect.top + currRect.height / 2 - container.top;
+
+            nextNodes.forEach((nextNode) => {
+                // Center of the next node
+                const nextRect = nextNode.getBoundingClientRect();
+                const nextX = nextRect.left + nextRect.width / 2 - container.left;
+                const nextY = nextRect.top + nextRect.height / 2 - container.top;
+
+                // Draw the line
+                ctx.beginPath();
+                ctx.moveTo(currX, currY);
+                ctx.lineTo(nextX, nextY);
+                ctx.strokeStyle = 'darkblue';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            })
+        })
+    }
+}
+
+
+window.onload = () => {
+    drawConnections();
+};
